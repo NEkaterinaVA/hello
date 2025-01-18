@@ -4,16 +4,17 @@ import (
 	"fmt"
     "github.com/NEkaterinaVA/greetings"
 	"log"
-    "math/rand"
 )
 
 func main() {
     log.Default().SetPrefix("greetings: ")
     log.SetFlags(0)
+    names := []string{"Gladys", "Samantha", "Darrin"}
     
-    message, err := greetings.Hello("Mary", rand.Intn(3))
+    messages, err := greetings.Hellos(names)
     if err != nil{
         log.Fatal(err)
     }
-    fmt.Println(message)
+
+    fmt.Println(messages)
 }
